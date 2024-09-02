@@ -1,4 +1,4 @@
-// src/App.tsx
+import { Helmet } from 'react-helmet';
 
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -13,17 +13,23 @@ import AdminHero from './sections/admin/AdminHero';
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/admin" element={<Admin />}>
-        <Route path="hero" element={<AdminHero />} />
-        <Route path="about" element={<AdminAbout />} />
-        <Route path="projects" element={<AdminProjects />} />
-        <Route path="services" element={<AdminServices />} />
-        <Route path="contact" element={<AdminContact />} />
-      </Route>
-    </Routes>
+    <>
+      <Helmet>
+        <title>Dev Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Helmet>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />}>
+            <Route path="hero" element={<AdminHero />} />
+            <Route path="about" element={<AdminAbout />} />
+            <Route path="projects" element={<AdminProjects />} />
+            <Route path="services" element={<AdminServices />} />
+            <Route path="contact" element={<AdminContact />} />
+          </Route>
+        </Routes>
+    </>
   );
 };
 
