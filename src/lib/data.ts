@@ -45,19 +45,86 @@ export interface ContactData {
   address: string;
 }
 
-// Export the data
+export interface NavigationItem {
+  name: string;
+  path: string;
+}
+
+export interface FooterData {
+  copyright: string;
+  links: {
+    name: string;
+    url: string;
+  }[];
+}
+
+export interface TimelineItem {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface Skill {
+  name: string;
+  level: string; // e.g., "Advanced", "Intermediate", "Beginner"
+}
+
+export interface AboutData {
+  title: string;
+  description: string;  // This is the missing property
+  personalStatement: string;
+  quote: string;
+  quoteAuthor: string;
+  timeline: TimelineItem[];
+  skills: Skill[];
+}
+
+export const aboutData: AboutData = {
+  title: "About Me",
+  description: "I am a full-stack developer with over a decade of experience in building dynamic and responsive websites.",
+  personalStatement:
+    "I am a passionate web developer who believes in the power of technology to change the world. My journey in web development started in 2010, and over the years, I have honed my skills in various technologies. I thrive in environments where I can challenge myself and collaborate with others to create innovative solutions.",
+  quote: "The only way to do great work is to love what you do.",
+  quoteAuthor: "Steve Jobs",
+  timeline: [
+    {
+      year: "2023",
+      title: "Senior Developer at TechCorp",
+      description: "Led a team of developers to build a scalable e-commerce platform.",
+    },
+    {
+      year: "2020",
+      title: "Freelance Web Developer",
+      description: "Worked on a variety of projects for clients across the globe.",
+    },
+    {
+      year: "2018",
+      title: "Web Developer at Startup XYZ",
+      description: "Developed and maintained the company's primary web applications.",
+    },
+    {
+      year: "2015",
+      title: "Junior Developer at DevStudio",
+      description: "Assisted in the development of client websites and internal tools.",
+    },
+  ],
+  skills: [
+    { name: "React", level: "Advanced" },
+    { name: "TypeScript", level: "Advanced" },
+    { name: "TailwindCSS", level: "Intermediate" },
+    { name: "Node.js", level: "Advanced" },
+    { name: "GraphQL", level: "Intermediate" },
+    { name: "UI/UX Design", level: "Intermediate" },
+  ],
+};
+
+
 export const heroData: HeroData = {
-  greeting: "Hello, I'm John Doe",
+  greeting: "Hello 👋, my name is",
   description:
     "I am a passionate web developer with experience in building modern web applications using React, TypeScript, and TailwindCSS. Let's create something amazing together!",
   ctaText: "Get in Touch",
   imageUrl: profile_image,
-};
-
-export const aboutData: AboutData = {
-  title: "About Me",
-  description:
-    "I am a web developer with a love for creating seamless user experiences. I have worked on various projects that utilize the latest technologies in web development.",
 };
 
 export const projectsData: ProjectsData = {
@@ -110,4 +177,26 @@ export const contactData: ContactData = {
   email: 'johndoe@example.com',
   phone: '+123456789',
   address: '123 Main St, Anytown, USA',
+};
+
+// Navigation data
+export const navigationItems: NavigationItem[] = [
+  { name: 'Home', path: '#home' },
+  { name: 'About', path: '#about' },
+  { name: 'Projects', path: '#projects' },
+  { name: 'Services', path: '#services' },
+  { name: 'Contact', path: '#contact' },
+];
+
+// Logo name
+export const logoName: string = "LOGO";
+
+// Footer data
+export const footerData: FooterData = {
+  copyright: "© 2024 John Doe. All rights reserved.",
+  links: [
+    { name: 'Privacy Policy', url: '/privacy' },
+    { name: 'Terms of Service', url: '/terms' },
+    { name: 'Contact', url: '/contact' },
+  ],
 };

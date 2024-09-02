@@ -13,7 +13,7 @@ import AdminHero from './sections/admin/AdminHero';
 
 const App: React.FC = () => {
   return (
-    <>
+    <div className=''>
       <Helmet>
         <title>Dev Portfolio</title>
         <link rel="icon" href="/favicon.ico" />
@@ -29,7 +29,7 @@ const App: React.FC = () => {
             <Route path="contact" element={<AdminContact />} />
           </Route>
         </Routes>
-    </>
+    </div>
   );
 };
 
