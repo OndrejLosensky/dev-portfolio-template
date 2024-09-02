@@ -1,15 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Hero from '../sections/hero';
 
-import { RiAdminLine } from "react-icons/ri";
+import Hero from '../sections/hero';
+import About from '../sections/about';
+import Projects from '../sections/projects';
+import Services from '../sections/services';
+import Contact from '../sections/contact';
 
 
 const Homepage: React.FC = () => {
   return (
     <div>
-      <Link className='absolute bottom-2 right-4 z-10 flex justify-center items-center w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-violet-400' to="/admin"><RiAdminLine className='fill-white w-6 h-6'/></Link>
       <Hero />
+      <About/>
+      <Projects />
+      <Services />
+      <Contact />
     </div>
   );
 };
