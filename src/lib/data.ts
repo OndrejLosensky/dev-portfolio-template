@@ -66,7 +66,8 @@ export interface TimelineItem {
 
 export interface Skill {
   name: string;
-  level: string; // e.g., "Advanced", "Intermediate", "Beginner"
+  level: number;
+  icon: string;
 }
 
 export interface AboutData {
@@ -109,12 +110,15 @@ export const aboutData: AboutData = {
     },
   ],
   skills: [
-    { name: "React", level: "Advanced" },
-    { name: "TypeScript", level: "Advanced" },
-    { name: "TailwindCSS", level: "Intermediate" },
-    { name: "Node.js", level: "Advanced" },
-    { name: "GraphQL", level: "Intermediate" },
-    { name: "UI/UX Design", level: "Intermediate" },
+    { name: "React", level: 90, icon: "React-Dark.svg" },
+    { name: "TypeScript", level: 85, icon: "TypeScript.svg" },
+    { name: "TailwindCSS", level: 75, icon: "TailwindCSS-Dark.svg" },
+    { name: "Node.js", level: 80, icon: "NodeJS-Dark.svg"},
+    { name: "JavaScript", level: 70, icon: "JavaScript.svg" },
+    { name: "Adobe Illustrator", level: 65, icon: "Illustrator.svg" },
+    { name: "Git", level: 90, icon: "Git.svg"},
+    { name: "Python", level: 30, icon: "Python-Dark.svg" },
+    { name: "Figma", level: 95, icon: "Figma.svg" },
   ],
 };
 

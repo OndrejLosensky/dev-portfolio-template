@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { navigationItems, logoName } from '../lib/data';
 import { useActiveSection } from '../context/active-section';
 
-import { IoSunnySharp } from "react-icons/io5";
-
 const Header: React.FC = () => {
   const { activeSection } = useActiveSection();
   const [scrolled, setScrolled] = useState(false);
@@ -43,7 +41,11 @@ const Header: React.FC = () => {
             ))}
           </ul>
         </nav>      
-        <button> <IoSunnySharp className='w-6 h-6'/> </button>
+       <select className='py-2 bg-neutral-700 px-4 border border-white/80 rounded-md'>
+            <option value="system">System default</option>
+            <option value="dark">Dark</option>
+            <option value="light">Theme</option>
+       </select>
       </div>
     </header>
   );

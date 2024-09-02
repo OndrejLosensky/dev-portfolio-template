@@ -10,16 +10,20 @@ import AdminProjects from './sections/admin/AdminProjects';
 import AdminServices from './sections/admin/AdminServices';
 import AdminContact from './sections/admin/AdminContact';
 import AdminHero from './sections/admin/AdminHero';
+import Projects from './pages/Projects';
+
+import favicon from "../public/favicon.svg";
 
 const App: React.FC = () => {
   return (
     <div className=''>
       <Helmet>
         <title>Dev Portfolio</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={favicon} />
       </Helmet>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects/>} />
         <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<Admin />}>
             <Route path="hero" element={<AdminHero />} />

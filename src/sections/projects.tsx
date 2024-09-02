@@ -3,14 +3,15 @@ import { projectsData } from '../lib/data';
 import { useSectionInView } from '../hooks/useSectionInView';
 
 import { HiArrowTopRightOnSquare } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   useSectionInView("projects")
 
   return (
-    <div id='projects' className="w-full my-48">
+    <div id='projects' className="w-full my-32">
       <h2 className="text-3xl font-bold">{projectsData.title}</h2>
-      <div className="flex flex-col gap-4 mt-4">
+      <div className="flex flex-col gap-4 mb-6 mt-4">
         {projectsData.projects.map((project) => (
           <div key={project.id} className="flex flex-row items-center border p-4 gap-x-8 rounded">
             <img src={project.imageUrl} alt={project.title} className="" />
@@ -37,6 +38,9 @@ const Projects: React.FC = () => {
             </div>            
           </div>
         ))}
+      </div>
+      <div className='w-full flex items-center justify-center'>
+        <Link to="/projects" className='px-8 py-4 mx-auto rounded-md bg-black active:scale-90 duration-200 text-white'> More projects  </Link>
       </div>
     </div>
   );
