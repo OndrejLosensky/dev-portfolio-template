@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { navigationItems, logoName } from '../lib/data';
 import { useActiveSection } from '../context/active-section';
+import ThemeSwitch from '../context/theme-switcher';
 
 const Header: React.FC = () => {
   const { activeSection } = useActiveSection();
@@ -19,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-2 z-30 w-3/4 bg-neutral-800/20 mx-auto rounded-lg border backdrop-filter backdrop-blur-md ${scrolled ? '':''} border-white/70 py-3 px-4  transition-all duration-300`}
+      className={`sticky top-2 z-30 w-3/4 bg-neutral-800/20 mx-auto rounded-lg border backdrop-filter backdrop-blur-md ${scrolled ? '':''} border-white/70 py-2 px-4  transition-all duration-300`}
     >
       <div className="container mx-auto flex justify-between items-center text-white">
         <h1 className="text-xl font-bold">{logoName}</h1>
@@ -41,11 +42,7 @@ const Header: React.FC = () => {
             ))}
           </ul>
         </nav>      
-       <select className='py-2 bg-neutral-700 px-4 border border-white/80 rounded-md'>
-            <option value="system">System default</option>
-            <option value="dark">Dark</option>
-            <option value="light">Theme</option>
-       </select>
+       <ThemeSwitch light='' dark=''/>
       </div>
     </header>
   );

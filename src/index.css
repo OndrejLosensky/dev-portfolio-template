@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+
+ body {
     background-color: #1d2530;
     color: aliceblue;
+    scroll-behavior: smooth;
+}
+
+.dark body {
+    background-color: #d8d8d8;
+    color: rgb(40, 40, 40);
     scroll-behavior: smooth;
 }
